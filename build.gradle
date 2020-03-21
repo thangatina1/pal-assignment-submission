@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        maven { url "http://platform-acceleration-lab-maven.s3.amazonaws.com" }
+        jcenter()
+    }
+
+    dependencies {
+        classpath "io.pivotal.pal.assignments:assignments-plugin:4.5.1"
+    }
+}
+
+apply plugin: "io.pivotal.pal.assignments.plugin"
+
+assignments {
+    apiUrl = "https://cognizant-waveland.education.pivotal.io/"
+    emails = [
+            "thangavel.ramanathan@cognizant.com"
+    ]
+    courseCode = "CND"
+}
+
+defaultTasks "tasks"
